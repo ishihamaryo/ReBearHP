@@ -40,7 +40,7 @@
     <article class="service-item service-design">
       <div class="service-card">
         <div class="service-main-image">
-          <img src="/images/Containerのコピー.png" alt="UI/UX・戦略デザイン メインイメージ">
+          <img src="/images/container-copy.png" alt="UI/UX・戦略デザイン メインイメージ">
         </div>
         <div class="service-content">
           <h3 class="service-title-ja">UI/UX・戦略デザイン</h3>
@@ -171,7 +171,7 @@
       <div class="service-card">
 
         <div class="service-main-image">
-          <img src="/images/Backgroundのコピー.png" alt="SNS集客・マーケティング メインイメージ">
+          <img src="/images/background-copy.png" alt="SNS集客・マーケティング メインイメージ">
         </div>
 
         <div class="service-content">
@@ -1268,6 +1268,374 @@ body {
 }
 
 
+
+
+@media (max-width: 1200px) {
+  .kv-contaier {
+    padding: 170px 36px 120px;
+  }
+
+  .kv-image1 {
+    right: 8%;
+    width: 300px;
+  }
+
+  .kv-image2 {
+    right: 100px;
+  }
+
+  .kv-image3 {
+    width: 1080px;
+    bottom: -40px;
+  }
+
+  .service-image-section {
+    height: 560px;
+  }
+
+  .service-image-swiper {
+    width: min(90vw, 820px);
+    height: 520px;
+  }
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding: 70px 18px;
+  }
+
+  .kv-contaier {
+    padding: 140px 18px 100px;
+  }
+
+  .kv-contents {
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .main-title {
+    font-size: 42px;
+  }
+
+  .redesign-text {
+    font-size: 58px;
+  }
+
+  .sub-text {
+    margin: -10px 0 32px;
+  }
+
+  .service-grid-table {
+    margin: 28px 0 0 0;
+    width: 280px;
+  }
+
+  .kv-image1,
+  .kv-image2,
+  .kv-image3 {
+    position: static;
+    width: 100%;
+  }
+
+  .kv-image1 {
+    max-width: 360px;
+    margin: 32px auto 0;
+  }
+
+  .kv-speech {
+    position: static;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .kv-image2 {
+    max-width: 220px;
+    margin: 0 auto 12px;
+  }
+
+  .kv-image3 {
+    max-width: 860px;
+    margin: 10px auto 0;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .service-card {
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px;
+  }
+
+  .service-tags li {
+    white-space: normal;
+  }
+
+  .service-bg-bear {
+    display: none;
+  }
+
+  .service-image-section {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 460px;
+  }
+
+  .service-image-swiper {
+    width: 100%;
+    max-width: 720px;
+    height: 460px;
+  }
+
+  .service-image-slide img {
+    max-height: 380px;
+    height: auto;
+  }
+
+  .core-value {
+    padding: 90px 16px;
+  }
+
+  .core-heading {
+    font-size: 26px;
+  }
+
+  .core-description {
+    font-size: 16px;
+    margin-bottom: 64px;
+  }
+
+  .core-cycle-heading {
+    font-size: 24px;
+  }
+
+  .inhouse {
+    padding: 90px 18px;
+  }
+
+  .inhouse-heading-image img {
+    max-width: 820px;
+  }
+
+  .inhouse-card-body {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    justify-items: center;
+  }
+
+  .inhouse-card-logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-content: center;
+  }
+
+  .inhouse-card-logo img {
+    width: min(420px, 70vw);
+  }
+
+  .inhouse-card-title,
+  .inhouse-card-text,
+  .inhouse-card-link {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .inhouse-detail-link {
+    min-width: 0;
+    width: min(100%, 380px);
+    justify-content: center;
+  }
+
+  .works {
+    padding: 60px 12px;
+  }
+
+  .works-heading {
+    font-size: 48px;
+  }
+
+  .works-list {
+    grid-template-columns: 1fr;
+  }
+
+  .company-heading {
+    margin-bottom: 60px;
+  }
+
+  .company-table {
+    font-size: 15px;
+    margin-bottom: 80px;
+  }
+
+  .company-table th {
+    width: 200px;
+    padding: 18px 0;
+  }
+
+  .company-table td {
+    padding: 18px 0;
+    padding-left: 32px;
+  }
+}
+
+@media (max-width: 720px) {
+  section {
+    padding: 60px 14px;
+  }
+
+  .kv-contaier {
+    padding: 120px 14px 90px;
+  }
+
+  .main-title {
+    font-size: 34px;
+  }
+
+  .redesign-text {
+    font-size: 48px;
+  }
+
+  .sub-text {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .service-grid-table {
+    width: 220px;
+  }
+
+  .service-card {
+    padding: 24px 18px;
+  }
+
+  .service-title-ja {
+    font-size: 20px;
+  }
+
+  .service-lead {
+    font-size: 14px;
+  }
+
+  .service-text {
+    font-size: 13px;
+  }
+
+  .service-tags li {
+    font-size: 11px;
+  }
+
+  .service-image-section {
+    height: 380px;
+  }
+
+  .service-image-swiper {
+    height: 360px;
+  }
+
+  .service-image-slide img {
+    max-height: 320px;
+  }
+
+  .core-heading {
+    font-size: 22px;
+  }
+
+  .core-description {
+    font-size: 15px;
+    margin-bottom: 48px;
+  }
+
+  .core-cycle-heading {
+    font-size: 20px;
+  }
+
+  .core-cycle-image img {
+    width: 100%;
+  }
+
+  .inhouse-card-title {
+    font-size: 24px;
+  }
+
+  .inhouse-card-text {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .inhouse-detail-link {
+    width: 100%;
+  }
+
+  .works-heading {
+    font-size: 38px;
+  }
+
+  .company-heading {
+    margin-bottom: 46px;
+  }
+
+  .company-table {
+    font-size: 14px;
+  }
+
+  .company-table th,
+  .company-table td {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+  }
+
+  .company-table th {
+    font-size: 16px;
+    padding-top: 16px;
+  }
+
+  .company-table td {
+    padding-left: 0;
+    padding-bottom: 16px;
+  }
+
+  .contact-heading h2 {
+    font-size: 52px;
+    margin-bottom: 30px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    max-width: 420px;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .service-image-section {
+    height: 320px;
+  }
+
+  .service-image-swiper {
+    height: 300px;
+  }
+
+  .service-image-slide img {
+    max-height: 260px;
+  }
+
+  .works-item p {
+    font-size: 16px;
+  }
+}
+
 </style>
 
 <script setup lang="ts">
@@ -1375,6 +1743,5 @@ onMounted(() => {
   initStagger()
 })
 </script>
-
 
 

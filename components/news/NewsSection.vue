@@ -60,24 +60,24 @@ const newsList = [
   background-position: right bottom;  /* ← 右下を基準に配置 */
   background-size: cover;
   background-repeat: no-repeat;      
-  padding: 50px 200px; 
+  padding: clamp(48px, 6vw, 96px) clamp(16px, 8vw, 120px);
   justify-content: center; 
 }
 
 .news-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin: 0 auto;
   list-style: none;
   gap: 20px;
-  margin: 0 200px;
-
+  padding: 0;
 }
 
 /* 各ニュースの行 */
 .news-item {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 100%;
   cursor: pointer;
   transform: translateY(0);
   transition:
@@ -121,5 +121,26 @@ const newsList = [
   font-weight: 550;
   line-height: 1.6;
   color: #222;
+}
+
+@media (max-width: 960px) {
+  .news {
+    padding-inline: 24px;
+    background-position: center;
+  }
+
+  .news-list {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .news {
+    padding: 48px 16px;
+  }
+
+  .news-item .news-title {
+    font-size: 15px;
+  }
 }
 </style>

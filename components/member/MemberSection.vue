@@ -238,4 +238,78 @@ const members = [
   letter-spacing: 0.08em;
   color: rgba(211, 220, 255, 0.9);
 }
+
+@media (max-width: 1024px) {
+  .member {
+    padding: 96px 16px 130px;
+  }
+
+  .member-heading {
+    margin-bottom: 60px;
+  }
+
+  .member-heading img {
+    max-width: 460px;
+  }
+
+  .member-lead-ja {
+    font-size: 18px;
+  }
+
+  .member-list {
+    gap: 24px;
+  }
+
+  .member-card {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .member {
+    padding: 76px 14px 110px;
+  }
+
+  .member-heading {
+    margin-bottom: 48px;
+  }
+
+  .member-heading img {
+    max-width: 320px;
+  }
+
+  .member-lead-ja {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .member-card-content {
+    padding: 32px 16px 24px;
+  }
+
+  .member-avatar-wrap {
+    width: 80px;
+    height: 80px;
+    left: 16px;
+    top: -36px;
+  }
+
+  .member-role {
+    margin: 0 0 8px;
+    font-size: 11px;
+  }
+
+  .member-name {
+    margin: 0 0 14px;
+    font-size: 18px;
+  }
+
+  .member-bio {
+    font-size: 12px;
+  }
+
+  .member-more {
+    font-size: 32px;
+  }
+}
 </style>
