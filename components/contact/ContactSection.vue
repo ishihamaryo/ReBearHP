@@ -135,4 +135,46 @@ import AppFooter from '@/components/AppFooter.vue'
 .contact-btn--filled:hover {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 1024px) {
+  .contact {
+    padding-top: 220px;
+  }
+
+  .contact-heading h2 {
+    font-size: 72px;
+  }
+
+  .contact-btn {
+    width: 320px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact {
+    padding-top: 140px;
+  }
+
+  .contact-heading h2 {
+    font-size: 52px;
+    margin-bottom: 28px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .contact-btn {
+    width: min(420px, 100%);
+    font-size: 20px;
+  }
+
+  .icon-circle {
+    width: 46px;
+    height: 46px;
+  }
+}
 </style>
