@@ -1,0 +1,965 @@
+commit ac62bf423a6356f295593aab4c9a42c2d388e9d1
+Author: user <user@usernoMacBook-Air.local>
+Date:   Tue Dec 23 18:59:25 2025 +0900
+
+    静的と動的の編集
+
+diff --git a/pages/index.vue b/pages/index.vue
+index b436691..821c74c 100644
+--- a/pages/index.vue
++++ b/pages/index.vue
+@@ -1,5 +1,5 @@
+ <template>
+-<section class="kv">
++<section id="top" class="kv">
+    <AppHeader/> 
+ 
+     <div class="kv-contaier">
+@@ -29,50 +29,11 @@
+      </div>
+ </section>
+ 
+-<section class="news">
+-        <ul class="news-list">
+-          <li class="news-item">
+-            <a href="https://prtimes.jp/main/html/rd/p/000000005.000155573.html">
+-             <img src="/images/155573-5-b4d1f7a345dead0506e5dc098ad17a95-1308x1025.png" alt="">
+-              <time datetime="2025-05-09">2025.5.9</time>
+-              <span class="news-title">
+-                速報：東京ビッグサイトに謎のZ世代集団が出現
+-              </span>
+-            </a>
+-          </li>
+-          <li class="news-item">
+-            <a href="https://prtimes.jp/main/html/rd/p/000000004.000155573.html">
+-             <img src="/images/155573-5-b4d1f7a345dead0506e5dc098ad17a95-1308x1025 (1).png" alt="">
+-              <time datetime="2025-04-02">2025.4.2</time>
+-              <span class="news-title">
+-                Z世代の常識：モノ消費からコト消費へ！ReBearとOshicocogが「決...
+-              </span>
+-            </a>
+-          </li>
+-          <li class="news-item">
+-             <a href="https://prtimes.jp/main/html/rd/p/000000002.000155573.html">
+-            <img src="/images/155573-5-b4d1f7a345dead0506e5dc098ad17a95-1308x1025 (2).png" alt="">
+-              <time datetime="2025-01-16">2025.1.16</time>
+-              <span class="news-title">
+-                Z世代の「お酒」に関する意識調査を実施！
+-              </span>
+-            </a>
+-          </li>
+-          <li class="news-item">
+-            <a href="https://prtimes.jp/main/html/rd/p/000000001.000155573.html">
+-             <img src="/images/155573-5-b4d1f7a345dead0506e5dc098ad17a95-1308x1025 (3).png" alt="">
+-              <time datetime="2025-01-16">2025.1.16</time>
+-              <span class="news-title">
+-                α・Z世代向けリサーチプラットフォーム「aZリサーチ」リリース
+-              </span>
+-            </a>
+-          </li>
+-        </ul>
+-</section>
++<NewsSection/>
+ 
+-<section class="service">
++<section id="service" class="service">
+   <div class="service-inner">
+-    <div class="service-heading-image">
++    <div class="service-heading-image js-service-title">
+       <img src="/images/section-title.png" alt="SERVICE">
+     </div>
+ 
+@@ -106,7 +67,7 @@
+         </div>
+       </div>
+        <div class="service-bg-bear">
+-          <img src="/images/スクリーンショット 2025-06-14 11.13.56 3.png" alt="背景のクマ画像">
++          <img src="/images/background-bear.png" alt="背景のクマ画像">
+         </div>
+ 
+       <ul class="service-tags">
+@@ -125,8 +86,11 @@
+         <li>動画デザイン / 制作</li>
+       </ul>
+     </article>
+-    <section class="service-image-section">
+-<div class="service-image-swiper-container">
++
++
++     <section class="service-image-section">
++       <div class="service-image-bg"></div>
++        <div class="service-image-swiper-container">
+     <Swiper
+   class="service-image-swiper"
+   :modules="[Autoplay]"
+@@ -150,8 +114,6 @@
+ </Swiper>
+ </div>
+ </section>
+- 
+-
+ 
+     <article class="service-item service-dev">
+       <div class="service-card">
+@@ -187,7 +149,7 @@
+       </div>
+ 
+         <div class="service-bg-bear">
+-          <img src="/images/スクリーンショット 2025-06-14 11.13.56 3.png" alt="背景のクマ画像">
++          <img src="/images/background-bear.png" alt="背景のクマ画像">
+         </div>
+       
+ 
+@@ -238,7 +200,7 @@
+         </div>
+       </div>
+          <div class="service-bg-bear">
+-           <img src="/images/スクリーンショット 2025-06-14 11.13.56 3.png" alt="背景のクマ画像">
++           <img src="/images/background-bear.png" alt="背景のクマ画像">
+          </div>
+ 
+       <ul class="service-tags">
+@@ -258,8 +220,9 @@
+       </ul>
+     </article>
+   </div>
++
+ <div class="core-value">
+-  <div class="core-title-img">
++  <div class="core-title-img js-fade-up">
+     <img src="/images/Corevalue_logo.png" alt="CORE VALUE">
+   </div>
+   <h2 class="core-heading">
+@@ -277,197 +240,14 @@
+     <img src="/images/Corevalue_flow.png" alt="ReDesign サイクル">
+   </div>
+ </div>
+-
+-
+ </section>
+ 
+-<section class="member">
+-  <div class="member-inner">
+-
+-    <!-- セクション見出し -->
+-    <div class="member-heading">
+-      <img src="/images/MEMBER.png" alt="MEMBER">
+-      <p class="member-lead-ja">
+-        平均年齢26歳。Z世代を中心としたメンバーで<br>
+-        多種多様な「イマ」をアップデートします。
+-      </p>
+-    </div>
+-
+-    <!-- メンバー一覧：各カードは「背景画像＋アイコン画像」の2枚構成 -->
+-    <div class="member-list">
+-
+-      <!-- 荒川さん -->
+-      <article class="member-card">
+-        <!-- 上の大きい背景写真 -->
+-        <div class="member-card-photo">
+-          <img
+-            class="member-photo-bg"
+-            src="/images/荒川背景画像.png"
+-            alt="荒川 力哉 背景写真"
+-          >
+-        </div>
+-
+-        <!-- 下のカード部分（アイコン＋テキスト） -->
+-        <div class="member-card-content">
+-          <div class="member-avatar-wrap">
+-            <!-- 丸アイコン画像（2枚目の画像） -->
+-            <img
+-              class="member-avatar"
+-              src="/images/荒川アイコン.png"
+-              alt="荒川 力哉 アイコン"
+-            >
+-          </div>
+-
+-          <div class="member-info">
+-             <h3 class="member-name">荒川 力哉</h3>
+-            <p class="member-role">CEO</p>
+-            <p class="member-bio">
+-              早稲田大学在学中に営業代理店を立ち上げ<br>2年で4億を売り上げ、支店メンバー100人の責任者を務める。SHOWROOM株式会社に1人目の新卒として就職し新規事業部に配属。toC向けの動画コンテンツ配信サービス(smash.)を立ち上げメンバーとして参画し2年間で200万DLを達成。更に10以上の新規のプロジェクト立ち上げに関わる。21年8月、CEOとしてReBear社を創業。
+-            </p>
+-          </div>
+-        </div>
+-      </article>
+-
+-      <!-- 甲斐さん -->
+-      <article class="member-card">
+-        <div class="member-card-photo">
+-          <img
+-            class="member-photo-bg"
+-            src="/images/甲斐背景画像.png"
+-            alt="甲斐 慎之助 背景写真"
+-          >
+-        </div>
+-        <div class="member-card-content">
+-          <div class="member-avatar-wrap">
+-            <img
+-              class="member-avatar"
+-              src="/images/甲斐アイコン.png"
+-              alt="甲斐 慎之助 アイコン"
+-            >
+-          </div>
+-          <div class="member-info">
+-            <h3 class="member-name">甲斐 慎之助</h3>
+-            <p class="member-role">CTO</p>
+-            <p class="member-bio">
+-              慶応義塾大学在学中にIT企業を設立し、アプリケーション開発、DX推進、生成AIの研究開発など、各事業の責任者を務める一方で、役員として営業、財務、管理業務全般を統括。東証プライム上場企業から中小企業に至るまで多岐にわたるクライアントの案件を手がける。AWS、GMO、SBCなどのイベントでAIの専門家として登壇も行うReBear社にはCTOとして参画。
+-            </p>
+-          </div>
+-        </div>
+-      </article>
++<MemberSection/>
+ 
+-      <!-- 國井さん -->
+-      <article class="member-card">
+-        <div class="member-card-photo">
+-          <img
+-            class="member-photo-bg"
+-            src="/images/國井背景画像.png"
+-            alt="國井 桃花 背景写真"
+-          >
+-        </div>
+-        <div class="member-card-content">
+-          <div class="member-avatar-wrap">
+-            <img
+-              class="member-avatar"
+-              src="/images/國井アイコン.png"
+-              alt="國井 桃花 アイコン"
+-            >
+-          </div>
+-          <div class="member-info">
+-            <h3 class="member-name">國井 桃花</h3>
+-            <p class="member-role">LEAD MARKTER</p>
+-            <p class="member-bio">
+-              早稲田大学卒業後、楽天グループ株式会社に入社。楽天モバイルと楽天市場で営業を経験後、時間と場所にとらわれない働き方に憧れ、楽天を退社しノマドの聖地と呼ばれる東欧ジョージアに移住。 Webスキルを学んでフリーランスに転身し、ReBearにWebデザイナーとSNSマーケターとして参画。 現在SNSチームのリーダーとして9アカウントの運用をしつつ、デザイナーとしてHPや自社サービスのクリエイティブ制作を担当。
+-            </p>
+-          </div>
+-        </div>
+-      </article>
+-
+-      <!-- 以下、同じ構造でメンバー追加 -->
+-      <article class="member-card">
+-        <div class="member-card-photo">
+-          <img
+-            class="member-photo-bg"
+-            src="/images/伊部背景画像.png"
+-            alt="伊部 恭平 背景写真"
+-          >
+-        </div>
+-        <div class="member-card-content">
+-          <div class="member-avatar-wrap">
+-            <img
+-              class="member-avatar"
+-              src="/images/伊部アイコン.png"
+-              alt="伊部 恭平 アイコン"
+-            >
+-          </div>
+-          <div class="member-info">
+-            <h3 class="member-name">伊部 恭平</h3>
+-            <p class="member-role">SALES MANAGER</p>
+-            <p class="member-bio">
+-              早稲田大学卒業後、株式会社BuySell Technologiesに入社。営業職として入社後、同年には新人王を獲得。その後、2年間で営業成績上位10%を継続して、社内最速で管理職昇進を果たす。SV（スーパーバイザー）として部下の育成や支店売上の達成に貢献。2024年3月にはReBear合同会社に参画し、営業統括としてグロース事業のリード獲得を担当。また営業代行を軸とした営業事業部の立ち上げを行い、初年度売上1億円を達成。持ち前の戦略的思考とリーダーシップで、社内の急成長を実現。
+-            </p>
+-          </div>
+-        </div>
+-      </article>
+-
+-      <article class="member-card">
+-        <div class="member-card-photo">
+-          <img
+-            class="member-photo-bg"
+-            src="/images/司代背景画像.png"
+-            alt="司代 一稀 背景写真"
+-          >
+-        </div>
+-        <div class="member-card-content">
+-          <div class="member-avatar-wrap">
+-            <img
+-              class="member-avatar"
+-              src="/images/司代アイコン.png"
+-              alt="司代 一稀 アイコン"
+-            >
+-          </div>
+-          <div class="member-info">
+-            <h3 class="member-name">司代 一稀</h3>
+-            <p class="member-role">MARKETING MANGER</p>
+-            <p class="member-bio">
+-              湘南工科大学在学中に、荒川が立ち上げた営業代理店に参画し、営業部長としてマネジメントを経験。卒業後はRetty株式会社にてインサイドセールスを担当し、新人賞を獲得。その後退社し、ReBear合同会社の立ち上げに参画。現在は同社でマーケティンググループマネージャーを務める傍ら、音楽事務所 YUSVOX株式会社を設立し、取締役として経営およびクリエイターのマネジメントに携わっている。
+-            </p>
+-          </div>
+-        </div>
+-      </article>
+-      <article class="member-card">
+-        <div class="member-card-photo">
+-          <img
+-            class="member-photo-bg"
+-            src="/images/堀沢背景画像.png"
+-            alt="堀澤 大地 背景写真"
+-          >
+-        </div>
+-        <div class="member-card-content">
+-          <div class="member-avatar-wrap">
+-            <img
+-              class="member-avatar"
+-              src="/images/堀沢アイコン.png"
+-              alt="堀澤 大地 アイコン"
+-            >
+-          </div>
+-          <div class="member-info">
+-            <h3 class="member-name">堀澤 大地</h3>
+-            <p class="member-role">MARKETER</p>
+-            <p class="member-bio">
+-               早稲田大学在学中から3社にて長期インターンを経験し、学生時代より実践的なビジネススキルを培う。就職活動では外資系コンサルティングファームから内定を獲得するも、インターンとして参画していた当社の事業に強く共感し、そのまま入社。現在はマーケティング領域の幅広い案件に携わり、戦略立案から実行まで一貫して参画している。
+-            </p>
+-          </div>
+-        </div>
+-      </article>
+-    </div>
+-  </div>
+-  <h2 class="member-more">+40 more to go.</h2>
+-</section>
+-
+-<section class="inhouse">
++<section id="inhouse" class="inhouse">
+   <div class="inhouse-inner">
+ 
+-    <div class="inhouse-heading-image">
++    <div class="inhouse-heading-image js-inhouse-title">
+       <img src="/images/in-house_logo.png" alt="IN-HOUSE">
+     </div>
+ 
+@@ -535,7 +315,7 @@
+       <div class="works-item">
+         <!-- 画像：TO-C & EC 右（ファッションECなど） -->
+         <a href="https://wisfeline.com/">
+-        <img src="/images/Wis Feline.png" alt="TO-C & EC 2">
++        <img src="/images/Wis_feline.png" alt="TO-C & EC 2">
+         <p>韓国ゴルフショップウェア『Wis Feline』</p>
+         </a>
+       </div> <!-- works-item -->
+@@ -562,11 +342,11 @@
+     </div> <!-- works-list -->
+   </div> <!-- works-block -->
+ </section>
+-<section class="company">
++<section id="company" class="company">
+   <div class="company-inner">
+ 
+     <!-- COMPANY 見出し（画像） -->
+-    <div class="company-heading">
++    <div class="company-heading js-company-title">
+       <img src="/images/Company_logo.png" alt="COMPANY">
+     </div>
+ 
+@@ -603,39 +383,15 @@
+   </div>
+ </section>
+ 
+-<section class="contact">
+-  <div class="contact-inner">
+-    <!-- CONTACT 見出し -->
+-    <div class="contact-heading">
+-      <h2>CONTACT US</h2>
+-    </div>
+-    <div class="contact-buttons">
+-      <a href="https://www.wantedly.com/companies/ReBear#_=_" class="contact-btn contact-btn--outline">
+-        <span>採用情報</span>
+-        <div class="icon-circle">
+-          <span class="arrow">→</span>
+-        </div>
+-      </a>
+-      <a href="https://rebear-contact.studio.site/" class="contact-btn contact-btn--filled">
+-        <span>お問い合わせ</span>
+-        <div class="icon-circle black">
+-          <span class="arrow white">→</span>
+-        </div>
+-      </a>
+-    </div>
+-  </div>
+-  <AppFooter/>
++<!-- pages/index.vue -->
++<section id="contact" class="contact-footer-bg">
++  <ContactSection />
++ <AppFooter />
+ </section>
+ 
+-
+-
+ </template>
+ 
+-      
+-
+-
+-
+- 
++       
+ 
+ <style scoped>
+ section {
+@@ -784,86 +540,23 @@ body {
+ }
+ 
+ .kv-image3 {
+-  right: 20px;
+   bottom: -80px;
+   width: 1280px;
+   text-align: center;
+   z-index: 2;
+-
+-}
+-
+-.news {
+-  background: url(/images/News_background.jpg);     
+-  background-position: right bottom;  /* ← 右下を基準に配置 */
+-  background-size: cover;
+-  background-repeat: no-repeat;      
+-  padding: 50px 200px; 
+-  justify-content: center; 
+-}
+-
+-.news-list {
+-  display: flex;
+-  margin: 0 auto;
+-  padding: 0;
+-  list-style: none;
+-  gap: 20px;
+-
+-}
+-
+-/* 各ニュースの行 */
+-.news-item {
+-  display: flex;
+-  flex-direction: column;
+-  width: 400px;
+-  cursor: pointer;
+-  transform: translateY(0);
++  opacity: 0;
++  transform: translateX(120px);
+   transition:
+-    transform 0.35s cubic-bezier(.215, .61, .355, 1),
+-
+-}
+-
+-.news-item img {
+-  width: 100%;
+-  aspect-ratio: 16/10;
+-  object-fit: cover;
+-  border-radius: 10px;
+-  display: block;
+-}
+-.news-item:hover {
+-  transform: translateY(-9px);
+-}
+-
+-
+-/* リンク部分（テキスト） */
+-.news-item a {
+-  text-decoration: none;
+-  display: flex;
+-  flex-direction: column;
+-  color: #221d1d;
+-  gap: 6px;
+-  
++    opacity 1s ease,
++    transform 1s cubic-bezier(.215, .61, .355, 1);
++  will-change: opacity, transform;
+ }
+-
+-/* 日付 */
+-.news-item time {
+-  font-size: 14px;
+-  color: #777;
+-  letter-spacing: 0.05em;
+-}
+-
+-/* タイトル */
+-.news-item .news-title {
+-  font-size: 18px;
+-  font-weight: 550;
+-  line-height: 1.6;
+-  color: #222;
++.kv-image3.is-visible {
++  opacity: 1;
++  transform: translateX(0);
+ }
+ 
+ 
+-.service-section {
+-  background: #f7f7f9;
+-}
+-
+ .service-inner {
+   max-width: 1000px;
+   margin: 0 auto;
+@@ -880,6 +573,16 @@ body {
+   width: 100%;
+   height: auto;
+   display: inline-block;
++  opacity: 0;
++  transform: translateY(60px);
++  transition: 
++    opacity 0.8s ease,
++    transform 0.8s ease;
++}
++
++.service-heading-image.is-show img {
++  opacity: 1;
++  transform: translateY(0);
+ }
+ 
+ 
+@@ -890,6 +593,7 @@ body {
+ 
+ .service-card {
+   position: relative;
++
+   display: flex;
+   align-items: stretch;
+   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+@@ -1006,45 +710,64 @@ body {
+ }
+ 
+ .service-image-section {
++  position: relative;
++  width: 100vw;
++  height: 700px;
++  left:50%;
++  right:50%;
++  margin-left:-50vw;
++  margin-right:-50vw;
++  overflow: hidden;
++  margin-bottom: 40px;
++}
++
++.service-image-bg {
++  position: absolute;
++  inset: 0;
+   width: 100%;
+-  height: 550px;
+-  background-image: url("/images/ee1cc55e4eeddd3feaabe77038317fa3fc51416a.jpg"); /* ← 背景画像 */
++  height: 100%;
++
++  background-image: url("/images/swipwer.background.png");
+   background-size: cover;
+   background-position: center;
+-  background-repeat: no-repeat;
+ 
+-  display: flex;
+-  align-items: center;
++  filter: blur(20px) brightness(0.7);
++  transform: scale(1.25);
++
++  z-index: 2;
++  pointer-events: none;
++
+ }
+ 
+ 
+ .service-image-swiper-container{
++  position: relative;
++  z-index: 2;
+   width: 100%;
+-  max-width: 1280px;
+-  height: 550px;
+   margin: 0 auto;
+-}
+-
++  padding:0 24px;
++} 
+ 
+ .service-image-swiper {
+-  margin-top: 32px;
+-  width: 100%;
+-  height: 550px;
+-  background-color: #b32a2a;
++  width: 900px;
++  height: 700px;
+   overflow: hidden;
+ 
+ }
+ 
+ .service-image-slide {
+-  height: 550px;              
+-  width:1000px;
+-}
++  height: 100%;  
++  display: flex;            
++  justify-content: center;
++  align-items: center;
+ 
++}
+ 
+ .service-image-slide img {
+   width: 100%;
+-  height: 100%;
+-  display: block;
++  height: 70%;
++  object-fit: cover;
++
+ }
+ 
+ .service-tags li {
+@@ -1097,6 +820,19 @@ body {
+   margin: 0 auto 40px;
+   display: block;
+ }
++.js-fade-up {
++  opacity: 0;
++  transform: translateY(60px);
++  transition:
++    opacity 0.8s ease,
++    transform 0.8s ease;
++}
++
++.js-fade-up.is-visible {
++  opacity: 1;
++  transform: translateY(0);
++}
++
+ 
+ .core-heading {
+   font-size: 32px;
+@@ -1133,131 +869,6 @@ body {
+ 
+ 
+ 
+-.member {
+-  padding: 120px 24px 160px;
+-  background: #01030eff; /* 本家はかなり暗いネイビー〜黒のグラデ。正確な色は不明なので近似 */
+-  color: #fff;
+-}
+-
+-.member-inner {
+-  max-width: 1120px;
+-  margin: 0 auto;
+-}
+-
+-/* 見出し部分（MEMBER画像＋リード文） */
+-.member-heading {
+-  text-align: center;
+-  margin-bottom: 75px;
+-}
+-
+-.member-heading img {
+-  max-width: 600px; 
+-  width: 100%;
+-  height: auto;
+-  display: block;
+-  margin: 0 auto 40px;
+-}
+-
+-.member-lead-ja {
+-  margin: 0;
+-  font-size: 20px;
+-  line-height: 1.9;
+-  color: rgba(255, 255, 255, 0.8);
+-}
+-
+-
+-
+-.member-list {
+-  display: flex;
+-  flex-wrap: wrap;             /* 折り返して2カラムにする */
+-  gap: 32px;                   /* カード同士の余白 */
+-  justify-content: space-between;
+-  margin: 0;
+-  padding: 0;
+-}
+-
+-
+-.member-card {
+-  flex: 0 0 calc(50% - 16px);  /* 2カラムにする */
+-  display: flex;
+-  flex-direction: column;
+-}
+-
+-.member-card-photo {
+-  border-radius: 24px 24px 0 0;
+-  overflow: hidden;
+-  background: #111;
+-}
+-
+-.member-photo-bg {
+-  display: block;
+-  width: 100%;
+-  height: auto;
+-}
+-
+-/* 下のカード本体（アイコン＋テキスト） */
+-.member-card-content {
+-  position: relative;
+-  padding: 40px 24px 28px;
+-  border-radius: 24px;
+-  background: radial-gradient(circle at top left, #182436 0%, #050810 60%, #02030a 100%);
+-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7); 
+-}
+-
+-.member-avatar-wrap {
+-  position: absolute;
+-  left: 24px;
+-  top: -50px;
+-  width: 100px;
+-  height: 100px;
+-  border-radius: 50%;
+-  padding: 2px;
+-  background: linear-gradient(135deg, #01030eff); 
+-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+-}
+-
+-.member-avatar {
+-  width: 100%;
+-  height: 100%;
+-  display: block;
+-  border-radius: 50%;
+-  object-fit: cover;
+-}
+-
+-
+-.member-info {
+-  margin-top: 12px;
+-}
+-
+-.member-role {
+-  margin: -30px 120px 10px;
+-  font-size: 12px;
+-  letter-spacing: 0.1em;
+-  color: rgba(255, 255, 255, 0.7);
+-}
+-
+-.member-name {
+-  margin: -30px 120px 30px ; 
+-  font-size: 20px;
+-  font-weight: 700;
+-}
+-
+-.member-bio {
+-  margin: 0;
+-  font-size: 13px;
+-  line-height: 1.9;
+-  color: rgba(255, 255, 255, 0.78);
+-}
+-
+-
+-.member-more {
+-  margin: 40px 0 0;
+-  text-align: center;
+-  font-size: 40px;
+-  font-weight: 700;
+-  letter-spacing: 0.08em;
+-  color: rgba(211, 220, 255, 0.9); /* 本家の少し淡い水色テキスト。正確なカラーコードはわからないので近似 */
+-}
+ 
+ 
+ .inhouse {
+@@ -1278,6 +889,17 @@ body {
+   margin: 0 auto 60px;
+   display: block;
+ }
++.js-inhouse-title {
++  opacity: 0;
++  transform: translateY(60px);
++  transition: 
++    opacity 0.8s ease,
++    transform 0.8s ease;
++}
++.js-inhouse-title.is-visible {
++  opacity: 1;
++  transform: translateY(0);
++}
+ 
+ /* サブ画像（aZヒーロー） */
+ .inhouse-sub img {
+@@ -1484,6 +1106,18 @@ body {
+   display: inline-block;
+ }
+ 
++.js-company-title {
++  opacity: 0;
++  transform: translateY(60px);
++  transition: 
++    opacity 0.8s ease,
++    transform 0.8s ease;
++}
++.js-company-title.is-visible {
++  opacity: 1;
++  transform: translateY(0);
++}
++
+ /* テーブル */
+ .company-table {
+   width: 100%;
+@@ -1562,6 +1196,9 @@ body {
+   letter-spacing: 0.03em;
+ 
+   position: relative;
++  transition: 
++    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
++    box-shadow 0 18px 40px rgba(0, 0, 0, 0.25);
+ }
+ 
+ /* テキストを中央に固定する */
+@@ -1606,56 +1243,137 @@ body {
+ }
+ /* ホバー */
+ 
++.contact-btn:hover {
++  transform: translateY(-8px);
++  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
++}
+ .contact-btn--outline:hover {
+   background: rgba(255, 255, 255, 0.1);
+ }
++.contact-btn--filled:hover {
++  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
++}
+ 
+-</style>
++.contact-footer-bg {
++  background: url(/images/Contact_background.png);
++  background-size: cover;
++  background-position: center top;
++}
+ 
+-<script setup>
+-import { onMounted } from 'vue'
++.contact-footer-bg {
++  background: url(/images/Contact_background.png);
++  background-size: cover;
++  background-position: top center;
++  background-repeat: no-repeat;
++}
+ 
+-onMounted(() => {
+-  const targets = document.querySelectorAll('.js-scroll-appear')
+ 
+-  const observer = new IntersectionObserver(
+-    (entries) => {
+-      entries.forEach(entry => {
+-        if (entry.isIntersecting) {
+-          entry.target.classList.add('is-visible')
+-        }
+-      })
+-    },
+-    {
+-      threshold: 0.3
+-    }
+-  )
+-  targets.forEach(target => observer.observe(target))
+-})
++</style>
+ 
++<script setup lang="ts">
++import { onMounted } from 'vue'
+ 
+ import { Swiper, SwiperSlide } from 'swiper/vue'
+ import { Autoplay } from 'swiper/modules'
+-
+ import 'swiper/css'
+ 
+-const serviceImages = [
++/* =============================
++  Swiper Images
++============================= */
++const serviceImages: string[] = [
+   "/images/01.png",
+   "/images/02.png",
+-  "/images/03.png" ,
++  "/images/03.png",
+   "/images/04.png",
+   "/images/05.png",
+   "/images/06.png",
+   "/images/07.png",
+   "/images/08.png",
+-  "/images/09.png",   
++  "/images/09.png",
+   "/images/10.png",
+   "/images/11.png",
+-  "/images/12.png",
++  "/images/12.png", 
+   "/images/13.png",
+   "/images/14.png",
+   "/images/15.png"
+ ]
++
++/* =============================
++  初期化関数
++============================= */
++const initScrollObserver = () => {
++  const selectorList = [
++    '.js-scroll-appear',
++    '.service-heading-image',
++    '.js-fade-up',
++    '.js-inhouse-title',
++    '.js-company-title'
++  ]
++
++  const observer = new IntersectionObserver(
++    (entries) => {
++      entries.forEach(entry => {
++        if (!entry.isIntersecting) return
++
++        if (entry.target.classList.contains('service-heading-image')) {
++          entry.target.classList.add('is-show')
++        } else {
++          entry.target.classList.add('is-visible')
++        }
++
++        observer.unobserve(entry.target)
++      })
++    },
++    { threshold: 0.3 }
++  )
++
++  selectorList.forEach(selector => {
++    document.querySelectorAll(selector).forEach(el => {
++      observer.observe(el)
++    })
++  })
++}
++
++const initKvImage = () => {
++  const target = document.querySelector('.kv-image3')
++  if (!target) return
++
++  setTimeout(() => {
++    target.classList.add('is-visible')
++  }, 300)
++}
++
++const initStagger = () => {
++  const container = document.querySelector('.js-stagger')
++  if (!container) return
++
++  const items = container.querySelectorAll('.js-stagger-item')
++
++  const observer = new IntersectionObserver(
++    ([entry]) => {
++      if (!entry.isIntersecting) return
++
++      items.forEach((item, index) => {
++        item.style.transitionDelay = `${index * 0.4}s`
++        item.classList.add('is-visible')
++      })
++
++      observer.unobserve(entry.target)
++    },
++    { threshold: 0.3 }
++  )
++
++  observer.observe(container)
++}
++
++/* =============================
++  mounted（1回だけ）
++============================= */
++onMounted(() => {
++  initScrollObserver()
++  initKvImage()
++  initStagger()
++})
+ </script>
+ 
+ 

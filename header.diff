@@ -1,0 +1,52 @@
+commit ac62bf423a6356f295593aab4c9a42c2d388e9d1
+Author: user <user@usernoMacBook-Air.local>
+Date:   Tue Dec 23 18:59:25 2025 +0900
+
+    静的と動的の編集
+
+diff --git a/components/AppHeader.vue b/components/AppHeader.vue
+index bd557af..8696b19 100644
+--- a/components/AppHeader.vue
++++ b/components/AppHeader.vue
+@@ -6,16 +6,14 @@
+         </NuxtLink>
+ 
+         <nav class="main-nav">
+-            <ul>
+-          <li><NuxtLink to="/top">TOP</NuxtLink></li>
+-          <li><NuxtLink to="/news">NEWS</NuxtLink></li>
+-          <li><NuxtLink to="/service">SERVICE</NuxtLink></li>
+-          <li><NuxtLink to="/member">MEMBER</NuxtLink></li>
+-          <li><NuxtLink to="/inhouse">IN-HOUSE</NuxtLink></li>
+-          <li><NuxtLink to="/company">COMPANY</NuxtLink></li>
+-          <li><NuxtLink to="/contact">CONTACT</NuxtLink></li>
+-            </ul>
+-        </nav>
++  <ul>
++    <li v-for="item in menu" :key="item.id">
++      <a :href="item.to">
++        {{ item.label }}
++      </a>
++    </li>
++  </ul>
++</nav>
+     </div>
+    </header>
+ </template>
+@@ -104,6 +102,16 @@ export default {
+       isMenuOpen: false,
+       // スクロール判定（背景変更など用）
+       isScrolled: false,
++
++      menu: [
++        { id: 'top', label: 'TOP', to: '#top' },
++        { id: 'news', label: 'NEWS', to: '#news' },
++        { id: 'service', label: 'SERVICE', to: '#service' },
++        { id: 'member', label: 'MEMBER', to: '#member' },
++        { id: 'inhouse', label: 'IN-HOUSE', to: '#inhouse' },
++        { id: 'company', label: 'COMPANY', to: '#company' },
++        { id: 'contact', label: 'CONTACT', to: '#contact' }
++      ]
+     }
+   },
+   mounted() {

@@ -1,7 +1,6 @@
 <template>
 <section id="top" class="kv">
    <AppHeader/> 
-
     <div class="kv-contaier">
         <div class="kv-contents">
             <h1 class="main-title">すべての挑戦を<br>
@@ -9,12 +8,10 @@
             </h1>
             <p class="sub-text">戦略から実行まで一気痛感のクリエイティブパートナー</p>
         </div>
-        <div class="Group service-grid-table">      
-            <div class="grid-cell Container">Design</div>
-            <div class="grid-cell Container">Engineering</div>
-            <div class="grid-cell Container">Marketing</div>
-            <div class="grid-cell Container">Our Services</div>
+        <div class="Group-table">      
+          <img src="/images/kv_table.png" alt="表">
         </div>
+
         <div class="kv-image1">
             <img src="/images/KV_PHONE.png" alt="phone">
         </div>
@@ -28,9 +25,7 @@
         </div>
      </div>
 </section>
-
 <NewsSection/>
-
 <section id="service" class="service">
   <div class="service-inner">
     <div class="service-heading-image js-service-title">
@@ -145,14 +140,10 @@
             </div>
           </div>
         </div>
-      
       </div>
-
         <div class="service-bg-bear">
           <img src="/images/background-bear.png" alt="背景のクマ画像">
         </div>
-      
-
       <ul class="service-tags">
         <li>ビジネス設計</li>
         <li>要件定義</li>
@@ -184,7 +175,6 @@
             戦略設計から実行・効果検証まで一貫して対応し、短期的な成果に加え、
             中長期的な成長まで視野に入れた支援を提供します。
           </p>
-
           <div class="service-strong">
             <div class="strong-icon">
               <img src="/images/Logo container.png" alt="Strong Point アイコン">
@@ -391,7 +381,6 @@
 
 </template>
 
-       
 
 <style scoped>
 section {
@@ -414,7 +403,7 @@ body {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 200px 60px 140px;
+  padding: 200px 0 60px;
 }
 
 .kv-contents {
@@ -441,53 +430,15 @@ body {
   font-weight: 600;
   margin: -15px 0 40px;
 }
-/*==== SERVICE GRID TABLE ====*/
-.service-grid-table {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 50px);
-  width: 320px;
-
-  /* ★ 中央寄せをやめる */
-  margin: 40px 0 0 15%;  /* 上に少し余白をあけて、左をテキストと同じ 15% に */
-  position: relative;
-  font-family: ProximaNova, sans-serif;
+.Group-table {
+  width: 400px;
+}
+.Group-table img {
+  height: auto;
+  display: block;
+  z-index: 5;
 }
 
-/* セル内テキスト */
-.grid-cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 700;
-  color: #d5d3d3;
-  text-align: center;
-}
-
-/* まず横線を 2 本（上・下）引く */
-.service-grid-table::before,
-.service-grid-table::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.28);
-  pointer-events: none;
-}
-
-/* 1 行目と 2 行目の間（= 下の線） */
-.service-grid-table::before {
-  top: 50px;
-}
-.service-grid-table::after {
-  top: 50px;
-}
-/* 表の一番下の線 */
-.service-grid-table::after {
-  top: 100px;
-}
 
 
 .kv-image1,
@@ -1267,7 +1218,60 @@ body {
   background-repeat: no-repeat;
 }
 
+/* =========================
+   KV Tablet (max-width:1080px)
+========================= */
+@media (max-width: 1080px) {
+  /* 全体余白を少し縮める */
+  .kv-contaier {
+    max-width: 600px;
+    padding: 160px 40px 120px;
+  }
 
+  /* テキストブロック */
+  .kv-contents {
+    padding-left: 10%;
+    max-width: 480px;
+  }
+
+  /* タイトル系（比率を保ったまま縮小） */
+  .main-title {
+    font-size: 44px;
+  }
+
+  .redesign-text {
+    font-size: 64px;
+  }
+
+  .sub-text {
+    font-size: 15px;
+    margin: -12px 0 32px;
+  }
+
+
+  /* KV画像（位置は維持してサイズのみ調整） */
+  .kv-image1 {
+    width: 360px;
+    top: 150px;
+    right:5px;
+  }
+
+  .kv-image2 {
+    width: 160px;
+    right: 120px;
+    bottom: 30px;
+  }
+
+  .kv-image3 {
+    width: 100px;
+    bottom: -80px;
+  }
+
+  .kv-speech { 
+    right: 30px;
+    bottom: 20px;
+  }
+}
 </style>
 
 <script setup lang="ts">
