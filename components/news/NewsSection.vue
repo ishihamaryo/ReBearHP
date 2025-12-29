@@ -66,11 +66,12 @@ const newsList = [
 
 .news-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   margin: 0 auto;
   list-style: none;
   gap: 20px;
   padding : 0;
+  max-width: 1120px;
 
 }
 

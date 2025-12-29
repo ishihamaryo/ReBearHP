@@ -397,8 +397,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Segoe UI", sans-serif;
   color: #111;
-
 }
+
 .kv-contaier {
   position: relative;
   max-width: 1200px;
@@ -433,13 +433,12 @@ body {
 .Group-table {
   width: 400px;
 }
+
 .Group-table img {
   height: auto;
   display: block;
   z-index: 5;
 }
-
-
 
 .kv-image1,
 .kv-image2,
@@ -483,6 +482,7 @@ body {
   bottom: 30px;
   z-index: 5;
 }
+
 .kv-image2 {
   right: 150px;
   bottom: 40px;
@@ -506,7 +506,6 @@ body {
   opacity: 1;
   transform: translateX(0);
 }
-
 
 .service-inner {
   max-width: 1000px;
@@ -1218,60 +1217,573 @@ body {
   background-repeat: no-repeat;
 }
 
-/* =========================
-   KV Tablet (max-width:1080px)
-========================= */
-@media (max-width: 1080px) {
-  /* 全体余白を少し縮める */
+@media (max-width: 1200px) {
+   section {
+    padding: 72px 16px;
+  }
+  .kv {
+    position: relative;
+    overflow: hidden;
+  }
+
   .kv-contaier {
-    max-width: 600px;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 160px 40px 120px;
+    position: relative;
+    
   }
 
-  /* テキストブロック */
+  /* =========================
+     左カラム（文字＋表）
+     幅を完全に揃える
+  ========================= */
+  
   .kv-contents {
-    padding-left: 10%;
-    max-width: 480px;
+    padding-left: 90px;
+    max-width: 100%;
+  }
+  .Group-table {
+    max-width: 520px;
+    width: 100%;
   }
 
-  /* タイトル系（比率を保ったまま縮小） */
-  .main-title {
-    font-size: 44px;
+  .Group-table {
+    margin-top: 24px;
   }
 
-  .redesign-text {
-    font-size: 64px;
+  .Group-table img {
+    width: 100%;
+    display: block;
   }
 
-  .sub-text {
-    font-size: 15px;
-    margin: -12px 0 32px;
-  }
-
-
-  /* KV画像（位置は維持してサイズのみ調整） */
+  /* =========================
+     スマホ画像（右側）
+     下端に接触
+  ========================= */
   .kv-image1 {
-    width: 360px;
-    top: 150px;
-    right:5px;
+    position: absolute;
+    right: -0px;
+    bottom: -80px;
+    width: 380px;
+    z-index: 2;
+  }
+
+  .kv-image1 img {
+    width: 100%;
+    display: block;
+  }
+
+  /* =========================
+     吹き出し（画像2）
+     右下寄り・少し左へ
+  ========================= */
+  .kv-speech {
+    position: absolute;
+    right: 120px;
+    bottom: 220px;
+    z-index: 3;
   }
 
   .kv-image2 {
-    width: 160px;
-    right: 120px;
-    bottom: 30px;
+    position: absolute;
+    right: 10px;
+    bottom: -10px;
+    width: 170px;
+    z-index: 2;
   }
 
+  /* =========================
+     BUSINESS RE BEAR（画像3）
+     縮小＋中央寄せ
+  ========================= */
   .kv-image3 {
-    width: 100px;
-    bottom: -80px;
+    position: absolute;
+    bottom: 90px;
+    width: 70%;
+    z-index: 2;
+  
   }
 
-  .kv-speech { 
-    right: 30px;
-    bottom: 20px;
+  .kv-image3 img {
+    width: 100%;
+    display: block;
+  }
+
+
+  /* SERVICE */
+  .service-heading-image {
+    margin-bottom: 32px;
+    margin-top: 40px;
+  }
+
+  .service-heading-image img {
+    max-width: 520px;
+  }
+
+  .service-inner {
+    max-width: 920px;
+  }
+
+  .service-card {
+    gap: 24px;
+    padding: 28px;
+  }
+
+  .service-main-image {
+    flex: 0.9;
+  }
+
+  .service-content {
+    flex: 1.1;
+  }
+
+  .service-title-ja {
+    font-size: 22px;
+  }
+
+  .service-lead {
+    font-size: 14px;
+  }
+
+  .service-text {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .service-strong {
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .strong-text {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .service-tags {
+    gap: 8px;
+  }
+
+  .service-tags li {
+    font-size: 11px;
+    padding: 8px 12px 8px 22px;
+  }
+
+  /* SERVICE スライダー */
+  .service-image-section {
+    height: 520px;
+  }
+
+  .service-image-swiper-container {
+    padding: 0 16px;
+  }
+
+  .service-image-swiper {
+    width: 90vw;
+    max-width: 780px;
+    height: 520px;
+  }
+
+  .service-image-slide img {
+    height: 64%;
+  }
+
+  /* CORE VALUE */
+  .core-value {
+    padding: 96px 16px;
+  }
+
+  .core-heading {
+    font-size: 26px;
+  }
+
+  .core-description {
+    font-size: 16px;
+    margin-bottom: 56px;
+  }
+
+  .core-cycle-heading {
+    font-size: 24px;
+  }
+
+  .core-cycle-image img {
+    max-width: 780px;
+  }
+
+  /* IN-HOUSE */
+  .inhouse-inner {
+    max-width: 960px;
+  }
+
+  .inhouse-heading-image img {
+    margin-bottom: 40px;
+  }
+
+  .inhouse-card-body {
+    grid-template-columns: 1fr 0.9fr;
+    column-gap: 28px;
+  }
+
+  .inhouse-card-logo img {
+    width: min(320px, 28vw);
+  }
+
+  .inhouse-card-title {
+    font-size: 26px;
+  }
+
+  .inhouse-card-text {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .inhouse-detail-link {
+    min-width: 280px;
+    padding: 10px 0;
+  }
+
+  /* WORKS */
+  .works-heading {
+    font-size: 42px;
+    margin-bottom: 12px;
+  }
+
+  .works-list {
+    gap: 20px;
+  }
+
+  /* COMPANY */
+  .company-heading {
+    margin-bottom: 56px;
+  }
+
+  .company-heading img {
+    max-width: 620px;
+  }
+
+  .company-table {
+    margin-bottom: 96px;
+    font-size: 15px;
+  }
+
+  .company-table th {
+    width: 200px;
+    font-size: 17px;
+  }
+
+  .company-table td {
+    padding-left: 64px;
+    font-size: 14px;
+  }
+
+  /* CONTACT */
+  .contact-heading h2 {
+    font-size: 72px;
+  }
+
+  .contact-buttons {
+    gap: 20px;
+  }
+
+  .contact-btn {
+    width: 320px;
+    padding: 18px 22px;
+    font-size: 24px;
+  }
+
+  .icon-circle {
+    width: 44px;
+    height: 44px;
   }
 }
+
+/* =========================
+   Mobile (max-width:680px)
+========================= */
+@media (max-width: 680px) {
+  section {
+    padding: 64px 12px;
+  }
+
+  /* KV */
+  .kv {
+    padding-top: 16px;
+  }
+
+  .kv-contaier {
+    padding: 120px 0 80px;
+  }
+
+  .kv-contents {
+    padding: 0 16px;
+    max-width: none;
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 32px;
+  }
+
+  .redesign-text {
+    font-size: 42px;
+  }
+
+  .sub-text {
+    font-size: 14px;
+    margin: -10px 0 24px;
+  }
+
+  .Group-table {
+    margin: 0 auto 16px;
+    width: 72vw;
+    max-width: 320px;
+  }
+
+  .kv-contaier > .Group-table,
+  .kv-image1,
+  .kv-image2,
+  .kv-image3,
+  .kv-speech {
+    position: static;
+    transform: none;
+  }
+
+  .kv-image1,
+  .kv-image2,
+  .kv-image3 {
+    width: 80vw;
+    max-width: 360px;
+    margin: 0 auto 12px;
+  }
+
+  .kv-speech {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  /* SERVICE */
+  .service-inner {
+    max-width: none;
+  }
+
+  .service-heading-image img {
+    max-width: 360px;
+  }
+
+  .service-card {
+    flex-direction: column;
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .service-main-image,
+  .service-content {
+    order: initial;
+    width: 100%;
+  }
+
+  .service-main-image img {
+    border-radius: 12px;
+  }
+
+  .service-title-ja {
+    font-size: 18px;
+  }
+
+  .service-lead {
+    font-size: 13px;
+  }
+
+  .service-text {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .service-strong {
+    padding: 12px 12px;
+  }
+
+  .strong-title {
+    font-size: 13px;
+  }
+
+  .strong-text {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .service-tags {
+    gap: 8px 6px;
+    justify-content: flex-start;
+  }
+
+  .service-tags li {
+    font-size: 11px;
+    padding: 8px 10px 8px 20px;
+  }
+
+  /* SERVICE スライダー */
+  .service-image-section {
+    height: 420px;
+    margin-bottom: 24px;
+  }
+
+  .service-image-swiper {
+    width: 100%;
+    height: 420px;
+  }
+
+  .service-image-slide img {
+    height: 62%;
+  }
+
+  /* CORE VALUE */
+  .core-value {
+    padding: 72px 12px;
+  }
+
+  .core-heading {
+    font-size: 22px;
+  }
+
+  .core-description {
+    font-size: 15px;
+    margin-bottom: 48px;
+  }
+
+  .core-cycle-heading {
+    font-size: 20px;
+    margin-bottom: 28px;
+  }
+
+  .core-cycle-image img {
+    max-width: none;
+  }
+
+  /* IN-HOUSE */
+  .inhouse {
+    padding: 80px 12px;
+  }
+
+  .inhouse-heading-image img {
+    margin-bottom: 28px;
+  }
+
+  .inhouse-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .inhouse-card-logo {
+    order: -1;
+    justify-content: center;
+  }
+
+  .inhouse-card-logo img {
+    width: min(360px, 82vw);
+  }
+
+  .inhouse-card-title {
+    font-size: 22px;
+  }
+
+  .inhouse-card-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .inhouse-detail-link {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    padding: 12px 0;
+  }
+
+  /* WORKS */
+  .works {
+    padding: 48px 8px;
+  }
+
+  .works-heading {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .works-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .works-item p {
+    font-size: 15px;
+    margin-top: 6px;
+  }
+
+  /* COMPANY */
+  .company-heading img {
+    max-width: 360px;
+  }
+
+  .company-table {
+    border-collapse: separate;
+  }
+
+  .company-table tbody,
+  .company-table tr,
+  .company-table th,
+  .company-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .company-table tr {
+    padding: 14px 0;
+    border-bottom: 1px solid #dedede;
+  }
+
+  .company-table th {
+    text-align: left;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  .company-table td {
+    padding: 0;
+    font-size: 14px;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 24px 0 0;
+  }
+
+  .contact-heading h2 {
+    font-size: 54px;
+    margin-bottom: 28px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .contact-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 20px;
+    border-radius: 48px;
+  }
+
+  .icon-circle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 </style>
 
 <script setup lang="ts">

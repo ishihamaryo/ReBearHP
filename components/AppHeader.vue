@@ -3,7 +3,7 @@
         <NuxtLink to="/" class="logp">
             <img src="/images/ReBear_mark.png" alt="">
         </NuxtLink>
-ｖ
+
         <nav class="main-nav">
   <ul>
     <li v-for="item in menu" :key="item.id">
@@ -89,7 +89,12 @@
 .main-nav li:hover a{
   transform: translateY(-6px); /* 上に浮く */
 }
-@media (max-width: 1080px) {
+@media (max-width: 1200px) {
+  section {
+    padding: 72px 16px;
+  }
+
+
   .header-container {
     padding: 10px 16px;
   }
@@ -100,8 +105,11 @@
   }
 
   .header-container img {
-    height: 30px;
+    height: 40px;
   }
+  .main-nav{
+  display: none;
+}
 }
 
 @media (max-width: 680px) {
@@ -126,7 +134,7 @@
   }
 
   .header-container img {
-    height: 28px;
+    height: 20px;
   }
 }
 

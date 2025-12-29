@@ -11,7 +11,8 @@
 .footer {
   width: 100%;
   text-align: center;
-  padding-top: 80px;
+  padding: 40px 20px;
+  background-color: #f8f8f8;
 }
 
 .footer-inner {
