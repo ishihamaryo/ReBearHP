@@ -105,7 +105,7 @@ const members = [
 
 <!-- 重要：Newsと同じで「崩さない」ため、まずは scoped を付けない -->
 <style>
-/* あなたが貼ってくれたCSSをそのままコピペ（完全に同じ） */
+
 .member {
   padding: 120px 24px 160px;
   background: #01030eff;
@@ -237,5 +237,131 @@ const members = [
   font-weight: 700;
   letter-spacing: 0.08em;
   color: rgba(211, 220, 255, 0.9);
+}
+
+/* =====================
+   Member Responsive
+===================== */
+@media (max-width: 1200px) {
+  .member {
+    padding: 100px 16px 130px;
+  }
+
+  .member-inner {
+    max-width: 1040px;
+  }
+
+  .member-heading {
+    margin-bottom: 64px;
+  }
+
+  .member-heading img {
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+
+  .member-lead-ja {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .member-list {
+    gap: 26px;
+  }
+
+  .member-card {
+    flex: 0 0 calc(50% - 13px);
+  }
+
+  .member-card-content {
+    padding: 32px 20px 24px;
+  }
+
+  .member-avatar-wrap {
+    width: 92px;
+    height: 92px;
+    top: -46px;
+  }
+
+  .member-role {
+    margin: -26px 100px 8px;
+  }
+
+  .member-name {
+    margin: -26px 100px 24px;
+    font-size: 18px;
+  }
+
+  .member-bio {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .member-more {
+    margin-top: 32px;
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 680px) {
+  .member {
+    padding: 80px 12px 100px;
+  }
+
+  .member-inner {
+    max-width: none;
+  }
+
+  .member-heading {
+    margin-bottom: 40px;
+  }
+
+  .member-heading img {
+    max-width: 360px;
+  }
+
+  .member-lead-ja {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .member-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .member-card {
+    flex: 1 1 auto;
+  }
+
+  .member-card-content {
+    padding: 28px 18px 22px;
+  }
+
+  .member-avatar-wrap {
+    left: 18px;
+    top: -42px;
+    width: 82px;
+    height: 82px;
+  }
+
+  .member-role {
+    margin: -14px 0 6px;
+    padding-left: 96px;
+  }
+
+  .member-name {
+    margin: -16px 0 18px;
+    padding-left: 96px;
+  }
+
+  .member-bio {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .member-more {
+    font-size: 28px;
+  }
 }
 </style>

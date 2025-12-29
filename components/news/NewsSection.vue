@@ -124,28 +124,78 @@ const newsList = [
   line-height: 1.6;
   color: #222;
 }
-/* =========================
-   NEWS Tablet (max-width:1080px)
-========================= */
-@media (max-width: 1080px) {
 
+/* =====================
+   News Responsive
+===================== */
+@media (max-width: 1024px) {
+  .news-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+
+  /* =========================
+     NEWS セクション全体
+  ========================= */
   .news {
-    padding-inline: 24px;
-    background-position: center;
+    padding: 40px 20px;
+  }
+
+  /* =========================
+     リストを縦並びに
+  ========================= */
+  .news-list {
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+  }
+
+  /* =========================
+     各ニュースカード
+  ========================= */
+  .news-item {
+    width: 100%;
+  }
+
+  /* =========================
+     画像調整
+  ========================= */
+  .news-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* スマホらしい比率 */
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* =========================
+     テキスト部分
+  ========================= */
+  .news-item a {
+    margin-top: 12px;
+  }
+
+  .news-date {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .news-title {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+}
+
+@media (max-width: 640px) {
+  .news {
+    padding: 48px 16px;
   }
 
   .news-list {
-    margin: 0 auto;     /* 余計な左右マージンを解除 */
-    gap: 16px;
-    justify-content: center;
-  }
-
-  .news-item {
-    width: 480px;       /* 600 → 480 */
-  }
-
-  .news-item img {
-    border-radius: 8px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .news-item time {
@@ -157,14 +207,5 @@ const newsList = [
   }
 }
 
-@media (max-width: 640px) {
-  .news {
-    padding: 48px 16px;
-  }
-
-  .news-item .news-title {
-    font-size: 15px;
-  }
-}
 
 </style>

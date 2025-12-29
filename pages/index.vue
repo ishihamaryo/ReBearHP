@@ -384,7 +384,7 @@
 
 <style scoped>
 section {
-  padding: 80px 24px;
+  padding: 80px 0px;
 }
 .kv{
   background-image: url(/images/ee1cc55e4eeddd3feaabe77038317fa3fc51416a.png);
@@ -397,6 +397,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     "Segoe UI", sans-serif;
   color: #111;
+  overflow-x: hidden;
 }
 
 .kv-contaier {
@@ -1217,307 +1218,110 @@ body {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 1200px) {
-   section {
-    padding: 72px 16px;
-  }
-  .kv {
-    position: relative;
-    overflow: hidden;
+@media (max-width: 1199px) {
+
+  /* ===== 全体余白 ===== */
+  section {
+    padding: 72px 24px;
   }
 
+  /* ===== KV ===== */
   .kv-contaier {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 160px 40px 120px;
-    position: relative;
-    
+    padding: 160px 0 80px;
   }
 
-  /* =========================
-     左カラム（文字＋表）
-     幅を完全に揃える
-  ========================= */
-  
   .kv-contents {
-    padding-left: 90px;
-    max-width: 100%;
-  }
-  .Group-table {
-    max-width: 520px;
-    width: 100%;
+    padding-left: 8%;
+    max-width: 480px;
   }
 
-  .Group-table {
-    margin-top: 24px;
+  .main-title {
+    font-size: 44px;
   }
 
-  .Group-table img {
-    width: 100%;
-    display: block;
+  .redesign-text {
+    font-size: 64px;
   }
 
-  /* =========================
-     スマホ画像（右側）
-     下端に接触
-  ========================= */
   .kv-image1 {
-    position: absolute;
-    right: -0px;
-    bottom: -80px;
-    width: 380px;
-    z-index: 2;
-  }
-
-  .kv-image1 img {
-    width: 100%;
-    display: block;
-  }
-
-  /* =========================
-     吹き出し（画像2）
-     右下寄り・少し左へ
-  ========================= */
-  .kv-speech {
-    position: absolute;
-    right: 120px;
-    bottom: 220px;
-    z-index: 3;
+    width: 300px;
+    right: 8%;
   }
 
   .kv-image2 {
-    position: absolute;
-    right: 10px;
-    bottom: -10px;
-    width: 170px;
-    z-index: 2;
+    width: 150px;
   }
 
-  /* =========================
-     BUSINESS RE BEAR（画像3）
-     縮小＋中央寄せ
-  ========================= */
   .kv-image3 {
-    position: absolute;
-    bottom: 90px;
-    width: 70%;
-    z-index: 2;
-  
+    width: 90%;
+    bottom: -40px;
   }
 
-  .kv-image3 img {
-    width: 100%;
-    display: block;
-  }
-
-
-  /* SERVICE */
-  .service-heading-image {
-    margin-bottom: 32px;
-    margin-top: 40px;
-  }
-
-  .service-heading-image img {
-    max-width: 520px;
-  }
-
+  /* ===== SERVICE ===== */
   .service-inner {
     max-width: 920px;
   }
 
   .service-card {
+    padding: 32px;
     gap: 24px;
-    padding: 28px;
   }
 
-  .service-main-image {
-    flex: 0.9;
+  .service-image-section {
+    height: 520px;
   }
 
-  .service-content {
-    flex: 1.1;
+  .service-image-swiper {
+    width: 80vw;
+    max-width: 780px;
+  }
+
+  .service-image-slide img {
+    height: 65%;
+    position: absolute;
+    top:30px;
   }
 
   .service-title-ja {
     font-size: 22px;
   }
 
-  .service-lead {
-    font-size: 14px;
-  }
-
   .service-text {
     font-size: 13px;
-    line-height: 1.8;
   }
 
-  .service-strong {
-    gap: 12px;
-    padding: 14px 16px;
-  }
-
-  .strong-text {
-    font-size: 12px;
-    line-height: 1.7;
-  }
-
-  .service-tags {
-    gap: 8px;
-  }
-
-  .service-tags li {
-    font-size: 11px;
-    padding: 8px 12px 8px 22px;
-  }
-
-  /* SERVICE スライダー */
-  .service-image-section {
-    height: 520px;
-  }
-
-  .service-image-swiper-container {
-    padding: 0 16px;
-  }
-
-  .service-image-swiper {
-    width: 90vw;
-    max-width: 780px;
-    height: 520px;
-  }
-
-  .service-image-slide img {
-    height: 64%;
-  }
-
-  /* CORE VALUE */
-  .core-value {
-    padding: 96px 16px;
-  }
-
+  /* ===== CORE VALUE ===== */
   .core-heading {
     font-size: 26px;
   }
 
   .core-description {
     font-size: 16px;
-    margin-bottom: 56px;
   }
 
-  .core-cycle-heading {
-    font-size: 24px;
-  }
-
-  .core-cycle-image img {
-    max-width: 780px;
-  }
-
-  /* IN-HOUSE */
-  .inhouse-inner {
-    max-width: 960px;
-  }
-
-  .inhouse-heading-image img {
-    margin-bottom: 40px;
-  }
-
+  /* ===== INHOUSE ===== */
   .inhouse-card-body {
-    grid-template-columns: 1fr 0.9fr;
-    column-gap: 28px;
+    column-gap: 40px;
   }
 
   .inhouse-card-logo img {
     width: min(320px, 28vw);
   }
-
-  .inhouse-card-title {
-    font-size: 26px;
-  }
-
-  .inhouse-card-text {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-
-  .inhouse-detail-link {
-    min-width: 280px;
-    padding: 10px 0;
-  }
-
-  /* WORKS */
-  .works-heading {
-    font-size: 42px;
-    margin-bottom: 12px;
-  }
-
-  .works-list {
-    gap: 20px;
-  }
-
-  /* COMPANY */
-  .company-heading {
-    margin-bottom: 56px;
-  }
-
-  .company-heading img {
-    max-width: 620px;
-  }
-
-  .company-table {
-    margin-bottom: 96px;
-    font-size: 15px;
-  }
-
-  .company-table th {
-    width: 200px;
-    font-size: 17px;
-  }
-
-  .company-table td {
-    padding-left: 64px;
-    font-size: 14px;
-  }
-
-  /* CONTACT */
-  .contact-heading h2 {
-    font-size: 72px;
-  }
-
-  .contact-buttons {
-    gap: 20px;
-  }
-
-  .contact-btn {
-    width: 320px;
-    padding: 18px 22px;
-    font-size: 24px;
-  }
-
-  .icon-circle {
-    width: 44px;
-    height: 44px;
-  }
 }
+@media (max-width: 767px) {
 
-/* =========================
-   Mobile (max-width:680px)
-========================= */
-@media (max-width: 680px) {
+  /* ===== 全体 ===== */
   section {
-    padding: 64px 12px;
+    padding: 64px 16px;
   }
 
-  /* KV */
-  .kv {
-    padding-top: 16px;
-  }
-
+  /* ===== KV ===== */
   .kv-contaier {
-    padding: 120px 0 80px;
+    padding: 120px 0 64px;
   }
 
   .kv-contents {
     padding: 0 16px;
-    max-width: none;
     text-align: center;
   }
 
@@ -1531,69 +1335,40 @@ body {
 
   .sub-text {
     font-size: 14px;
-    margin: -10px 0 24px;
   }
 
-  .Group-table {
-    margin: 0 auto 16px;
-    width: 72vw;
-    max-width: 320px;
-  }
-
-  .kv-contaier > .Group-table,
+  /* KV装飾は縦積み */
+  .Group-table,
   .kv-image1,
   .kv-image2,
   .kv-image3,
   .kv-speech {
     position: static;
-    transform: none;
-  }
-
-  .kv-image1,
-  .kv-image2,
-  .kv-image3 {
     width: 80vw;
     max-width: 360px;
-    margin: 0 auto 12px;
+    margin: 0 auto 16px;
+    transform: none;
+    opacity: 1;
   }
 
-  .kv-speech {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 12px;
-  }
-
-  /* SERVICE */
-  .service-inner {
-    max-width: none;
-  }
-
+  /* ===== SERVICE ===== */
   .service-heading-image img {
     max-width: 360px;
+    margin: 0 auto;
   }
 
   .service-card {
     flex-direction: column;
-    padding: 22px;
-    gap: 18px;
+    padding: 24px;
   }
 
   .service-main-image,
   .service-content {
-    order: initial;
     width: 100%;
-  }
-
-  .service-main-image img {
-    border-radius: 12px;
   }
 
   .service-title-ja {
     font-size: 18px;
-  }
-
-  .service-lead {
-    font-size: 13px;
   }
 
   .service-text {
@@ -1601,33 +1376,14 @@ body {
     line-height: 1.7;
   }
 
-  .service-strong {
-    padding: 12px 12px;
-  }
-
-  .strong-title {
-    font-size: 13px;
-  }
-
-  .strong-text {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .service-tags {
-    gap: 8px 6px;
-    justify-content: flex-start;
-  }
-
-  .service-tags li {
-    font-size: 11px;
-    padding: 8px 10px 8px 20px;
-  }
-
-  /* SERVICE スライダー */
+  /* スライダー */
   .service-image-section {
-    height: 420px;
-    margin-bottom: 24px;
+    height: 400px;
+  }
+  .service-image-slide img {
+    height: 60%;
+    width: 70%;
+    border-radius: 12px;
   }
 
   .service-image-swiper {
@@ -1635,46 +1391,20 @@ body {
     height: 420px;
   }
 
-  .service-image-slide img {
-    height: 62%;
-  }
-
-  /* CORE VALUE */
-  .core-value {
-    padding: 72px 12px;
-  }
-
+  /* ===== CORE VALUE ===== */
   .core-heading {
     font-size: 22px;
   }
 
   .core-description {
     font-size: 15px;
-    margin-bottom: 48px;
   }
 
-  .core-cycle-heading {
-    font-size: 20px;
-    margin-bottom: 28px;
-  }
-
-  .core-cycle-image img {
-    max-width: none;
-  }
-
-  /* IN-HOUSE */
-  .inhouse {
-    padding: 80px 12px;
-  }
-
-  .inhouse-heading-image img {
-    margin-bottom: 28px;
-  }
-
+  /* ===== INHOUSE ===== */
   .inhouse-card-body {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
   }
 
   .inhouse-card-logo {
@@ -1683,54 +1413,31 @@ body {
   }
 
   .inhouse-card-logo img {
-    width: min(360px, 82vw);
+    width: 80vw;
   }
 
   .inhouse-card-title {
     font-size: 22px;
+    text-align: center;
   }
 
   .inhouse-card-text {
+    text-align: left;
     font-size: 14px;
-    line-height: 1.7;
   }
 
   .inhouse-detail-link {
     width: 100%;
-    min-width: 0;
     justify-content: center;
-    padding: 12px 0;
   }
 
-  /* WORKS */
-  .works {
-    padding: 48px 8px;
-  }
-
-  .works-heading {
-    font-size: 32px;
-    margin-bottom: 10px;
-  }
-
+  /* ===== WORKS ===== */
   .works-list {
     grid-template-columns: 1fr;
-    gap: 16px;
   }
 
-  .works-item p {
-    font-size: 15px;
-    margin-top: 6px;
-  }
-
-  /* COMPANY */
-  .company-heading img {
-    max-width: 360px;
-  }
-
-  .company-table {
-    border-collapse: separate;
-  }
-
+  /* ===== COMPANY ===== */
+  .company-table,
   .company-table tbody,
   .company-table tr,
   .company-table th,
@@ -1739,15 +1446,10 @@ body {
     width: 100%;
   }
 
-  .company-table tr {
-    padding: 14px 0;
-    border-bottom: 1px solid #dedede;
-  }
-
   .company-table th {
     text-align: left;
-    margin-bottom: 6px;
     font-size: 14px;
+    margin-bottom: 4px;
   }
 
   .company-table td {
@@ -1755,34 +1457,16 @@ body {
     font-size: 14px;
   }
 
-  /* CONTACT */
-  .contact {
-    padding: 24px 0 0;
-  }
-
-  .contact-heading h2 {
-    font-size: 54px;
-    margin-bottom: 28px;
-  }
-
-  .contact-buttons {
-    flex-direction: column;
-    gap: 12px;
-    padding: 0 12px;
-  }
-
-  .contact-btn {
-    width: 100%;
-    padding: 16px;
-    font-size: 20px;
-    border-radius: 48px;
-  }
-
-  .icon-circle {
-    width: 36px;
-    height: 36px;
-  }
+  /* ===== CONTACT ===== */
+ 
+.contact-footer-bg {
+  padding-bottom: 0 ;
+  padding-top: 80px;
 }
+
+
+}
+
 
 </style>
 
@@ -1813,6 +1497,30 @@ const serviceImages: string[] = [
   "/images/14.png",
   "/images/15.png"
 ]
+onMounted(() => {
+  // SPのみ実行
+  if (window.innerWidth > 767) return
+
+  const targets = document.querySelectorAll('.js-kv-fade')
+
+  if (!targets.length) return
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target) // 一度だけ
+        }
+      })
+    },
+    {
+      threshold: 0.2
+    }
+  )
+
+  targets.forEach(el => observer.observe(el))
+})
 
 /* =============================
   初期化関数

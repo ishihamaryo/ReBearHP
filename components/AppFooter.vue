@@ -12,7 +12,6 @@
   width: 100%;
   text-align: center;
   padding: 40px 20px;
-  background-color: #f8f8f8;
 }
 
 .footer-inner {

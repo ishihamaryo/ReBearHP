@@ -94,7 +94,6 @@
     padding: 72px 16px;
   }
 
-
   .header-container {
     padding: 10px 16px;
   }
