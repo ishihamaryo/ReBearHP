@@ -35,7 +35,7 @@
     <article class="service-item service-design">
       <div class="service-card">
         <div class="service-main-image">
-          <img src="/images/Containerのコピー.png" alt="UI/UX・戦略デザイン メインイメージ">
+          <img src="/images/Container-copy.png" alt="UI/UX・戦略デザイン メインイメージ">
         </div>
         <div class="service-content">
           <h3 class="service-title-ja">UI/UX・戦略デザイン</h3>
@@ -49,7 +49,7 @@
           </p>
           <div class="service-strong">
             <div class="strong-icon">
-              <img src="/images/Logo container.png" alt="Strong Point アイコン">
+              <img src="/images/Logo-container.png" alt="Strong Point アイコン">
             </div>
             <div class="strong-body">
               <h4 class="strong-title">Strong Point</h4>
@@ -129,7 +129,7 @@
 
           <div class="service-strong">
             <div class="strong-icon">
-              <img src="/images/Logo container.png" alt="Strong Point アイコン">
+              <img src="/images/Logo-container.png" alt="Strong Point アイコン">
             </div>
             <div class="strong-body">
               <h4 class="strong-title">Strong Point</h4>
@@ -162,7 +162,7 @@
       <div class="service-card">
 
         <div class="service-main-image">
-          <img src="/images/Backgroundのコピー.png" alt="SNS集客・マーケティング メインイメージ">
+          <img src="/images/Background-copy.png" alt="SNS集客・マーケティング メインイメージ">
         </div>
 
         <div class="service-content">
@@ -177,7 +177,7 @@
           </p>
           <div class="service-strong">
             <div class="strong-icon">
-              <img src="/images/Logo container.png" alt="Strong Point アイコン">
+              <img src="/images/Logo-container.png" alt="Strong Point アイコン">
             </div>
             <div class="strong-body">
               <h4 class="strong-title">Strong Point</h4>
