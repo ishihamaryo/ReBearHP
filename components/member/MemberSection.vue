@@ -326,7 +326,7 @@ const members = [
   }
 
   .member-list {
-  
+
     gap: 20px;
   }
 
