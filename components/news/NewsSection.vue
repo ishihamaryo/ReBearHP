@@ -52,6 +52,16 @@ const newsList = [
     title: 'α・Z世代向けリサーチプラットフォーム「aZリサーチ」リリース'
   }
 ]
+
+import { client } from '~/libs/microcms';
+
+// microCMSからデータを取得
+const { data: newsDate } = await useAsyncData('news', () => 
+  client.get({
+    endpoint: 'news', // 画像で確認したエンドポイント名
+    queries: { fields: 'id,title,date' } // 必要な項目だけ指定（任意）
+  })
+);
 </script>
 
 <style>
@@ -196,6 +206,12 @@ const newsList = [
   .news-list {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .news-item img {
+    width: 100%;          /* 横幅いっぱいを維持しつつ */
+    max-height: 250px;    /* 画像の高さの最大値を制限（お好みで調整してください） */
+    object-fit: cover;    /* 指定したサイズに合わせて画像を切り抜く（歪み防止） */
+    border-radius: 8px;   /* 角を少し丸くするとデザインが馴染みます */
   }
 
   .news-item time {

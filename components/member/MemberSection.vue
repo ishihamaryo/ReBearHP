@@ -303,7 +303,7 @@ const members = [
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 780px) {
   .member {
     padding: 80px 12px 100px;
   }
@@ -326,7 +326,7 @@ const members = [
   }
 
   .member-list {
-    flex-direction: column;
+  
     gap: 20px;
   }
 

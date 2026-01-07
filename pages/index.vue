@@ -1218,7 +1218,7 @@ body {
   background-repeat: no-repeat;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
 
   /* ===== 全体余白 ===== */
   section {
@@ -1308,53 +1308,135 @@ body {
     width: min(320px, 28vw);
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 760px) {
 
   /* ===== 全体 ===== */
   section {
     padding: 64px 16px;
   }
 
-  /* ===== KV ===== */
-  .kv-contaier {
-    padding: 120px 0 64px;
+/* ===== 全体・コンテナ ===== */
+  section.kv {
+    padding: 0 0 64px; /* 上の余白はHeaderで調整されるため0に */
+    overflow-x: hidden; /* 横はみ出し防止 */
+    position: relative;
   }
 
+  .kv-contaier {
+    padding: 80px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* すべて中央寄せ */
+    position: relative;
+  }
+
+  /* ===== テキストエリア ===== */
   .kv-contents {
-    padding: 0 16px;
     text-align: center;
+    padding: 0 20px;
+  
+    z-index: 10; /* テキストを最前面に */
   }
 
   .main-title {
     font-size: 32px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: bold;
   }
 
   .redesign-text {
-    font-size: 42px;
+    font-size: 52px; /* 画像に合わせて少し大きく */
+    display: block;
+    margin-top: 5px;
   }
 
   .sub-text {
-    font-size: 14px;
+    font-size: 13px;
+    color: #fff;
+    margin-top: 15px;
+    opacity: 0.9;
   }
 
-  /* KV装飾は縦積み */
+  /* ===== 画像・装飾エリア共通 ===== */
   .Group-table,
   .kv-image1,
   .kv-image2,
   .kv-image3,
   .kv-speech {
-    position: static;
-    width: 80vw;
-    max-width: 360px;
-    margin: 0 auto 16px;
-    transform: none;
-    opacity: 1;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 1. 背景の格子 (Group-table) */
+  .Group-table {
+    margin-bottom: -150px; /* 下の画像を上に食い込ませる */
+    z-index: 1;
+  }
+  .Group-table img {
+    width: 100%; /* 画面幅いっぱいに近く */
+    max-width: 760px;
+    height: auto;
+  }
+
+  /* 2. スマホ画像 (kv-image1) */
+  .kv-image1 {
+    z-index: 5;
+    margin-bottom: -50px;
+    justify-content: center; 
+    align-items: center;
+    display: flex;
+    position: relative;
+    left: 0;
+  }
+  .kv-image1 img {
+    width: 85%;
+    max-width: 300px;
+    height: auto;
+    margin :0 auto;
+  
+  }
+
+  /* 3. クマの吹き出し・ロゴ (kv-speech / kv-image2) */
+  /* 画像の配置に合わせて調整 */
+  .kv-speech {
+    position: absolute; /* スマホ画像に対して浮かせる */
+    bottom: 25%;
+    right: 5%;
+    width: auto;
+    z-index: 6;
+  }
+  .kv-image2 img {
+    width: 120px; /* 吹き出しのサイズ */
+    height: auto;
+    position: relative;
+    top:160px;
+  }
+
+  /* 4. 下部の BUSINESS RE BEAR ロゴ (kv-image3) */
+  .kv-image3 {
+    z-index: 7;
+    margin-top: -20px;
+    margin-bottom: 0;
+  }
+  .kv-image3 img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    top:-0px;
   }
 
   /* ===== SERVICE ===== */
   .service-heading-image img {
     max-width: 360px;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 
   .service-card {
@@ -1392,6 +1474,16 @@ body {
   }
 
   /* ===== CORE VALUE ===== */
+.core-title-img img{
+    max-width: 560px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width:100%;
+}
+  
+  
   .core-heading {
     font-size: 22px;
   }
@@ -1413,7 +1505,7 @@ body {
   }
 
   .inhouse-card-logo img {
-    width: 80vw;
+    width: 300px;
   }
 
   .inhouse-card-title {
@@ -1435,6 +1527,10 @@ body {
   .works-list {
     grid-template-columns: 1fr;
   }
+.works img{
+width:100%;
+max-width:500px;
+}
 
   /* ===== COMPANY ===== */
   .company-table,
@@ -1444,6 +1540,7 @@ body {
   .company-table td {
     display: block;
     width: 100%;
+   
   }
 
   .company-table th {
