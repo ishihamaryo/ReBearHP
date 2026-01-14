@@ -29,7 +29,6 @@
           </div>
         </a>
       </div>
-
     </div>
   </section>
 </template>
@@ -42,7 +41,7 @@ import AppFooter from '@/components/AppFooter.vue'
 <style scoped>
 
 .contact {
-  padding: 330px 0 0px 0 ;
+  width: 100%;
   text-align: center;
   color: #fff;
 }

@@ -8,7 +8,7 @@
             </h1>
             <p class="sub-text">戦略から実行まで一気痛感のクリエイティブパートナー</p>
         </div>
-        <div class="Group-table">      
+        <div class="Group-table"> 
           <img src="/images/kv_table.png" alt="表">
         </div>
 
@@ -1106,7 +1106,7 @@ body {
   background: url(/images/Contact_background.png);
   background-position: top center;
   background-repeat: no-repeat;
-  padding: 30px 0 0;
+  padding: 100px 0 0;
   text-align: center;
   color: #fff;
 }
@@ -1559,6 +1559,7 @@ max-width:500px;
 .contact-footer-bg {
   padding-bottom: 0 ;
   padding-top: 80px;
+  padding-bottom: 50px;
 }
 
 
