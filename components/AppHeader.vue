@@ -1,7 +1,7 @@
 <template>
     <header class="header-container">
         <NuxtLink to="/" class="logp">
-            <img src="/images/ReBear_mark.png" alt="">
+            <img src="/images/ReBear-mark.png" alt="rebear logo">
         </NuxtLink>
 
         <nav class="main-nav">
@@ -13,7 +13,6 @@
     </li>
   </ul>
 </nav>
- 
     </header>
 </template>
 
@@ -21,7 +20,7 @@
 <style scoped>
 .header {
   width: 100%;
-  background: url('/images/header_bg.png'), #02061A;
+  background-color: #02061A;
   background-size: cover;
   background-position: center;
 }

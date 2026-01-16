@@ -127,11 +127,11 @@ index b436691..821c74c 100644
  <div class="core-value">
 -  <div class="core-title-img">
 +  <div class="core-title-img js-fade-up">
-     <img src="/images/Corevalue_logo.png" alt="CORE VALUE">
+     <img src="/images/Corevalue-logo.png" alt="CORE VALUE">
    </div>
    <h2 class="core-heading">
 @@ -277,197 +240,14 @@
-     <img src="/images/Corevalue_flow.png" alt="ReDesign サイクル">
+     <img src="/images/Corevalue-flow.png" alt="ReDesign サイクル">
    </div>
  </div>
 -
@@ -818,7 +818,7 @@ index b436691..821c74c 100644
  
 -</style>
 +.contact-footer-bg {
-+  background: url(/images/Contact_background.png);
++  background: url(/images/Contact-background.png);
 +  background-size: cover;
 +  background-position: center top;
 +}
@@ -826,7 +826,7 @@ index b436691..821c74c 100644
 -<script setup>
 -import { onMounted } from 'vue'
 +.contact-footer-bg {
-+  background: url(/images/Contact_background.png);
++  background: url(/images/Contact-background.png);
 +  background-size: cover;
 +  background-position: top center;
 +  background-repeat: no-repeat;

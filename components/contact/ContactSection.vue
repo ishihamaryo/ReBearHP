@@ -18,7 +18,6 @@
             <span class="arrow">→</span>
           </div>
         </a>
-
         <a
           href="https://rebear-contact.studio.site/" 
           class="contact-btn contact-btn--filled"
@@ -39,13 +38,13 @@ import AppFooter from '@/components/AppFooter.vue'
 
 <!-- 重要：scoped を付けない -->
 <style scoped>
-
 .contact {
   width: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
   text-align: center;
   color: #fff;
 }
-
 
 .contact-heading h2 {
   font-size: 100px;

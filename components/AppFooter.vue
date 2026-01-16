@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
         <div class="footer-inner">
-            <img src="/images/ReBear_mark.png" alt="" class="footer-logo">
+            <img src="/images/ReBear-mark.png" alt="footer logo" class="footer-logo">
             <p class="footer=copy">© 2025 ReBear LLC. All rights reserved.</p>
         </div>
     </footer>

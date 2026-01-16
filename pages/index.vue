@@ -9,11 +9,15 @@
             <p class="sub-text">戦略から実行まで一気痛感のクリエイティブパートナー</p>
         </div>
         <div class="Group-table"> 
-          <img src="/images/kv_table.png" alt="表">
+          <figure>
+            <img src="/images/kv-table.png" alt="表">
+          </figure>
         </div>
 
         <div class="kv-image1">
-            <img src="/images/KV_PHONE.png" alt="phone">
+          <figure>
+            <img src="/images/kv-phone.png" alt="phone">
+          </figure>
         </div>
         <div class="kv-speech js-scroll-appear">
          <div class="kv-image2">
@@ -21,7 +25,7 @@
          </div>
         </div> 
         <div class="kv-image3">
-            <img src="/images/BUSINESS RE BEAR 1.png" alt="BUSINESS RE BEAR">
+            <img src="/images/BUSINESS-RE-BEAR-1.png" alt="BUSINESS RE BEAR">
         </div>
      </div>
 </section>
@@ -213,7 +217,7 @@
 
 <div class="core-value">
   <div class="core-title-img js-fade-up">
-    <img src="/images/Corevalue_logo.png" alt="CORE VALUE">
+    <img src="/images/Corevalue-logo.png" alt="CORE VALUE">
   </div>
   <h2 class="core-heading">
     アイディアの本質的な実現と、継続的なグロースの両立を
@@ -227,7 +231,7 @@
     本質に近づく “Re Design” のサイクル
   </h3>
   <div class="core-cycle-image">
-    <img src="/images/Corevalue_flow.png" alt="ReDesign サイクル">
+    <img src="/images/Corevalue-flow.png" alt="ReDesign サイクル">
   </div>
 </div>
 </section>
@@ -238,11 +242,11 @@
   <div class="inhouse-inner">
 
     <div class="inhouse-heading-image js-inhouse-title">
-      <img src="/images/in-house_logo.png" alt="IN-HOUSE">
+      <img src="/images/in-house-logo.png" alt="IN-HOUSE">
     </div>
 
     <div class="inhouse-sub">
-     <img src="/images/hero_image_aZ.png" alt="aZリサーチ">
+     <img src="/images/hero-image-aZ.png" alt="aZリサーチ">
     </div>
 
     <!-- 自社サービスカード一覧 -->
@@ -254,7 +258,7 @@
           <!-- 画像：サービスロゴ（LINE 風など） -->
           <div class="inhouse-card-logo">
             <img
-              src="/images/aZ_phone.png"
+              src="/images/aZ-phone.png"
               alt="オンラインインタビューサービス ロゴ"
               >
           </div>
@@ -282,11 +286,11 @@
 
     <div class="works-list works-list-flyer">
       <div class="works-item">
-        <img src="/images/digital_flyer1.png" alt="">
+        <img src="/images/digital-flyer1.png" alt="デジタルフライヤー 1">
       </div>
 
       <div class="works-item">
-        <img src="/images/digital_flyer2.png" alt="デジタルフライヤー 2">
+        <img src="/images/digital-flyer2.png" alt="デジタルフライヤー 2">
       </div>
     </div>
   </div>
@@ -305,7 +309,7 @@
       <div class="works-item">
         <!-- 画像：TO-C & EC 右（ファッションECなど） -->
         <a href="https://wisfeline.com/">
-        <img src="/images/Wis_feline.png" alt="TO-C & EC 2">
+        <img src="/images/Wis-feline.png" alt="TO-C & EC 2">
         <p>韓国ゴルフショップウェア『Wis Feline』</p>
         </a>
       </div> <!-- works-item -->
@@ -318,14 +322,14 @@
     <div class="works-list works-list-flyer">
       <div class="works-item">
         <a href="ここにリンク">
-          <img src="/images/secondmouse.png" alt="">
+          <img src="/images/secondmouse.png" alt="second mouse">
           <p>second mouse</p>
         </a>
       </div>
 
       <div class="works-item">
         <a href="https://yusvox.jp/">
-          <img src="/images/yusvox.png" alt="">
+          <img src="/images/yusvox.png" alt="YUSVOX">
           <p>YUSVOX</p>
         </a>
       </div>
@@ -337,7 +341,7 @@
 
     <!-- COMPANY 見出し（画像） -->
     <div class="company-heading js-company-title">
-      <img src="/images/Company_logo.png" alt="COMPANY">
+      <img src="/images/Company-logo.png" alt="COMPANY">
     </div>
 
     <!-- 会社情報テーブル -->
@@ -387,7 +391,7 @@ section {
   padding: 80px 0px;
 }
 .kv{
-  background-image: url(/images/ee1cc55e4eeddd3feaabe77038317fa3fc51416a.png);
+  background-image: url(/images/kv-background.png);
   position: relative;
   overflow: hidden;
   padding-top: 25px;
@@ -1103,7 +1107,8 @@ body {
 }
 
 .contact {
-  background: url(/images/Contact_background.png);
+  background: url(/images/Contact-background.png);
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   padding: 100px 0 0;
@@ -1206,13 +1211,7 @@ body {
 }
 
 .contact-footer-bg {
-  background: url(/images/Contact_background.png);
-  background-size: cover;
-  background-position: center top;
-}
-
-.contact-footer-bg {
-  background: url(/images/Contact_background.png);
+  background: url(/images/Contact-background.png);
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -1570,7 +1569,6 @@ max-width:500px;
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
