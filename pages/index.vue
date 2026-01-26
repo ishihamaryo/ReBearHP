@@ -514,7 +514,7 @@ body {
 }
 
 .service-inner {
-  max-width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
