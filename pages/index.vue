@@ -9,15 +9,14 @@
             <p class="sub-text">戦略から実行まで一気痛感のクリエイティブパートナー</p>
         </div>
         <div class="Group-table"> 
-          <figure>
+        
             <img src="/images/kv-table.png" alt="表">
-          </figure>
+       
         </div>
 
         <div class="kv-image1">
-          <figure>
+
             <img src="/images/kv-phone.png" alt="phone">
-          </figure>
         </div>
         <div class="kv-speech js-scroll-appear">
          <div class="kv-image2">
@@ -256,6 +255,7 @@
       <article class="inhouse-card inhouse-card-interview">
         <div class="inhouse-card-body">
           <!-- 画像：サービスロゴ（LINE 風など） -->
+          <div class="inhouse-rep">
           <div class="inhouse-card-logo">
             <img
               src="/images/aZ-phone.png"
@@ -266,6 +266,7 @@
           <h3 class="inhouse-card-title">
             Z世代向け！<br>話すだけバイトならaZリサーチ
           </h3>
+          </div>
           <p class="inhouse-card-text">
             Z世代の皆さま向けのオンラインインタビューサービスです。公式LINEにご登録後、関心のある案件にご応募いただき、オンラインでご参加いただけます。所要は最短30分、平均5,000円相当の謝礼をご用意。就活・推し活・スマホなど身近なテーマを中心に、プライバシーにも配慮して運営しております。
           </p>
@@ -513,7 +514,7 @@ body {
 }
 
 .service-inner {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -548,7 +549,6 @@ body {
 
 .service-card {
   position: relative;
-
   display: flex;
   align-items: stretch;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -649,7 +649,7 @@ body {
 }
 
 .service-bg-bear img {
-  width: 360px;
+  max-width: 360px;
   height: auto;
   display: block;
 }
@@ -666,29 +666,16 @@ body {
 
 .service-image-section {
   position: relative;
-  width: 100vw;
-  height: 700px;
-  left:50%;
-  right:50%;
-  margin-left:-50vw;
-  margin-right:-50vw;
+  margin: 100px 0;
   overflow: hidden;
-  margin-bottom: 40px;
 }
 
 .service-image-bg {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-
+  inset: 10px;
+  max-width: 100%;
   background-image: url("/images/swipwer.background.png");
   background-size: cover;
-  background-position: center;
-
-  filter: blur(20px) brightness(0.7);
-  transform: scale(1.25);
-
   z-index: 2;
   pointer-events: none;
 
@@ -698,21 +685,20 @@ body {
 .service-image-swiper-container{
   position: relative;
   z-index: 2;
-  width: 100%;
-  margin: 0 auto;
-  padding:0 24px;
+  max-width: 100%;
 } 
 
 .service-image-swiper {
-  width: 900px;
+  max-width: 100%;
   height: 700px;
   overflow: hidden;
 
 }
 
 .service-image-slide {
-  height: 100%;  
-  display: flex;            
+  width: 100%;
+  height: 100%;
+  display: flex;        
   justify-content: center;
   align-items: center;
 
@@ -889,9 +875,9 @@ body {
 /* 右：スマホ画像を右カラムに固定 */
 .inhouse-card-logo{
   grid-column: 2;
-  grid-row: 1 / 5;               /* タイトル〜ボタンの高さに合わせて縦にまたぐ */
+  grid-row: 1 / 5;          
   display: flex;
-  justify-content: flex-end;      /* 右寄せ */
+  justify-content: flex-end;     
   align-items: center;
   position: relative;
 }
@@ -997,7 +983,6 @@ body {
   letter-spacing: 0.12em;
   margin-bottom: 15px;
   opacity: 0.25;
-  
 }
 
 /* 画像リスト共通 */
@@ -1101,17 +1086,11 @@ body {
 }
 
 .company-table td {
-  padding: 24px 0;
   padding-left: 100px;
   color: #333333;
 }
 
 .contact {
-  background: url(/images/Contact-background.png);
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding: 100px 0 0;
   text-align: center;
   color: #fff;
 }
@@ -1307,11 +1286,11 @@ body {
     width: min(320px, 28vw);
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 680px) {
 
   /* ===== 全体 ===== */
   section {
-    padding: 64px 16px;
+    padding: 24px 16px;
   }
 
 /* ===== 全体・コンテナ ===== */
@@ -1322,7 +1301,7 @@ body {
   }
 
   .kv-contaier {
-    padding: 80px 0 0;
+    padding: 30px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center; /* すべて中央寄せ */
@@ -1333,7 +1312,6 @@ body {
   .kv-contents {
     text-align: center;
     padding: 0 20px;
-  
     z-index: 10; /* テキストを最前面に */
   }
 
@@ -1378,7 +1356,7 @@ body {
   }
   .Group-table img {
     width: 100%; /* 画面幅いっぱいに近く */
-    max-width: 760px;
+    max-width: 680px;
     height: auto;
   }
 
@@ -1430,6 +1408,10 @@ body {
   }
 
   /* ===== SERVICE ===== */
+  .service-inner {
+    max-width: 500px;
+    padding: 0 12px;
+  }
   .service-heading-image img {
     max-width: 360px;
     margin: 0 auto;
@@ -1453,10 +1435,16 @@ body {
   }
 
   .service-text {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.7;
+    font-style: bold;
   }
-
+  
+.service-tags li{
+background-color: #f7f7f7;
+  font-size: 11px;
+  line-height: 0.2;
+}
   /* スライダー */
   .service-image-section {
     height: 400px;
@@ -1473,6 +1461,9 @@ body {
   }
 
   /* ===== CORE VALUE ===== */
+  .core-value{
+  max-width:400px;
+}
 .core-title-img img{
     max-width: 560px;
     margin: 0 auto;
@@ -1481,8 +1472,7 @@ body {
     display: flex;
     width:100%;
 }
-  
-  
+ 
   .core-heading {
     font-size: 22px;
   }
@@ -1490,27 +1480,45 @@ body {
   .core-description {
     font-size: 15px;
   }
+  .core-cycle-heading{
+    font-size: 22px;
+    }
 
   /* ===== INHOUSE ===== */
+.inhouse-inner{
+  max-width: 360px;
+}
   .inhouse-card-body {
-    display: flex;
     flex-direction: column;
     gap: 20px;
   }
 
-  .inhouse-card-logo {
-    order: -1;
-    justify-content: center;
-  }
+   .inhouse-rep {
+  display: flex;         /* 横並びにする */
+  align-items: center; 
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 12px;             /* ロゴと文字の間の隙間 */
+  width: 100%;           /* 横幅いっぱいまで広げる */
+}
 
-  .inhouse-card-logo img {
-    width: 300px;
-  }
+.inhouse-card-logo {
+  flex-shrink: 0;    /* ロゴが文字に押されて潰れるのを防ぐ */
+  justify-content: center; /* 中央寄せ */
+}
 
-  .inhouse-card-title {
-    font-size: 22px;
-    text-align: center;
-  }
+.inhouse-card-logo img {
+  width: 140px;           /* ロゴの適切なサイズを指定（調整してください） */
+  height: auto;
+  display: block;
+}
+
+.inhouse-card-title {
+  margin: 0;             /* h3タグ特有の上下余白をリセットしてズレを防ぐ */
+  font-size: 23px;       /* 文字の大きさを調整 */
+  line-height: 1.4;      /* 行間を整える */
+  flex-grow: 1;
+}
 
   .inhouse-card-text {
     text-align: left;
@@ -1530,27 +1538,43 @@ body {
 width:100%;
 max-width:500px;
 }
+.works-heading {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  margin-bottom: 15px;
+  opacity: 0.4;
+}
 
   /* ===== COMPANY ===== */
+.company-inner {
+    max-width: 360px;
+    padding: 12px 0 0 2px;
+  }
+
+
   .company-table,
   .company-table tbody,
   .company-table tr,
   .company-table th,
   .company-table td {
-    display: block;
     width: 100%;
-   
   }
 
   .company-table th {
     text-align: left;
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 4px;
+    display: flex;
+
   }
 
   .company-table td {
     padding: 0;
     font-size: 14px;
+    padding-left: 30px;
+
+
   }
 
   /* ===== CONTACT ===== */

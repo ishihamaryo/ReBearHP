@@ -303,17 +303,17 @@ const members = [
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 680px) {
   .member {
     padding: 80px 12px 100px;
   }
 
   .member-inner {
-    max-width: none;
+    max-width: 320px;
   }
 
   .member-heading {
-    margin-bottom: 40px;
+    margin: 30px 0px;
   }
 
   .member-heading img {
@@ -321,7 +321,7 @@ const members = [
   }
 
   .member-lead-ja {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7;
   }
 

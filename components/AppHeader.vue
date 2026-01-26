@@ -112,28 +112,23 @@
 
 @media (max-width: 680px) {
   .header-container {
-    flex-direction: column;
     gap: 10px;
-    padding: 12px 16px;
+    display: space-between;
   }
+.logp{
+  max-width:250px;
+  height:40px;
+}
 
-  .main-nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.logp img{
+  width:100%;
+  height:100%;
+  margin-top: 30px;
+}
 
   .main-nav li::before {
     display: none; /* ◆装飾はモバイルでは非表示 */
-  }
-
-  .main-nav a {
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-
-  .header-container img {
-    height: 20px;
-  }
+  } 
 }
 
 
